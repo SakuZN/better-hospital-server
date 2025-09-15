@@ -10,7 +10,6 @@ export default (app: FastifyInstance) => {
         cronTime: "0 0 * * *",
         onTick: () => runHospitalAnalyticsCron(),
         startWhenReady: true,
-        runOnInit: true,
       },
     ],
   });
