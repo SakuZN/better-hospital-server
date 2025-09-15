@@ -1,0 +1,6 @@
+export default {
+  SUCCESS: 0,
+  ERROR: 1,
+  INTERNAL_SERVER_ERROR: 12,
+  SERVICE_UNAVAILABLE: 13,
+};
