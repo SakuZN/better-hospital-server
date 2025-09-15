@@ -127,10 +127,12 @@ export const runHospitalAnalyticsCron = () => {
                 from(
                   supabase
                     .from("posthog_analytics")
-                    .insert({
+                    .upsert({
                       hospital_id: hospitalId,
                       analytics: analyticsDataForStorage,
                       params: dateRange as unknown as Json,
+                    }, {
+                      onConflict: "hospital_id",
                     }),
                 ).pipe(
                   map(({ error }) => {
